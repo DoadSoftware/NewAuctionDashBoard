@@ -173,6 +173,7 @@ function addItemsToList(whatToProcess, dataToProcess)
 
   case 'SHOW_BID':
     $('#auction_div').empty();
+	
     if (dataToProcess && dataToProcess.auction) {
         let teams = dataToProcess.auction.team || dataToProcess.auction.teams;
         let players = dataToProcess.auction.players || [];

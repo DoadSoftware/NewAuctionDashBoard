@@ -73,7 +73,10 @@ public class IndexController
 			session_current_bid = new Auction();
 			session_auction = new Auction();
 			
-			return "auction";
+			 if ("ILT20".equals(selectedBroadcaster)) {
+			        return "auction_ilt20";   // resolves to auction_ilt20.jsp
+			    }
+			    return "auction";
 		}
 	}
 	
@@ -92,7 +95,7 @@ public class IndexController
 	                Auction.class
 	        );
 
-	        session_auction = AuctionFunctions.populateMatchVariables(session_auction, session_player, session_team);
+	    //    session_auction = AuctionFunctions.populateMatchVariables(session_auction, session_player, session_team);
 
 	        last_match_time_stamp = new File(
 	                AuctionUtil.AUCTION_DIRECTORY + AuctionUtil.AUCTION_JSON
